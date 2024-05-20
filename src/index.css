@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.banner {
+  background: url("../public/banner2.jpg");
+}
+.pagination .MuiPaginationItem-root {
+  color: #87ceeb;
+}
+
+.tables .MuiPaper-root {
+  margin-top: 20px;
+}
+.MuiOutlinedInput-root {
+  color: #fff !important;
+}
+.MuiInputLabel-root {
+  color: #fff !important;
+}
+
+.divScroll::-webkit-scrollbar {
+  display: none;
+}
