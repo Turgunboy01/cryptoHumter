@@ -1,6 +1,7 @@
 import React from "react";
 import useCartStore from "../context/useCardStore";
 import { CryptoState } from "../CryptoContext";
+import { numberWithCommas } from "./CointsTable";
 
 const WatchList = ({ setClickWatch, clickWatch }) => {
   const { data, removeItem } = useCartStore();
@@ -28,7 +29,7 @@ const WatchList = ({ setClickWatch, clickWatch }) => {
                   alt=""
                 />
                 <h3 className="text-[#fff] mt-4">
-                  {symbol} {item.current_price.toFixed(2)}
+                  {symbol} {numberWithCommas(item.current_price.toFixed(2))}
                 </h3>
                 <button
                   className="bg-[#FF0000] rounded-lg px-3 py-1 text-[#fff] mt-3"
