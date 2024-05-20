@@ -1,8 +1,10 @@
 import React from "react";
 import useCartStore from "../context/useCardStore";
+import { CryptoState } from "../CryptoContext";
 
 const WatchList = ({ setClickWatch, clickWatch }) => {
   const { data, removeItem } = useCartStore();
+  const { symbol } = CryptoState();
   const handleDelate = (id) => {
     removeItem({ id: id });
   };
@@ -26,7 +28,7 @@ const WatchList = ({ setClickWatch, clickWatch }) => {
                   alt=""
                 />
                 <h3 className="text-[#fff] mt-4">
-                  {item.current_price.toFixed(2)}
+                  {symbol} {item.current_price.toFixed(2)}
                 </h3>
                 <button
                   className="bg-[#FF0000] rounded-lg px-3 py-1 text-[#fff] mt-3"
@@ -41,7 +43,7 @@ const WatchList = ({ setClickWatch, clickWatch }) => {
       ) : (
         <div className="">
           <div className="flex justify-center h-screen items-center  flex-col gap-2">
-            <h3 className="text-[30px] font-semibold ">No Items</h3>
+            <h3 className="text-[30px] font-semibold  text-[#fff]">No Items</h3>
             <button
               className="bg-[#FF0000] px-5 py-2 rounded-lg text-[#fff] mt-3"
               onClick={() => setClickWatch(false)}
