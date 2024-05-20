@@ -2,6 +2,8 @@ import React from "react";
 import useCartStore from "../context/useCardStore";
 import { CryptoState } from "../CryptoContext";
 import { numberWithCommas } from "./CointsTable";
+import { IconButton } from "@mui/material";
+import { Close } from "@mui/icons-material";
 
 const WatchList = ({ setClickWatch, clickWatch }) => {
   const { data, removeItem } = useCartStore();
@@ -17,7 +19,7 @@ const WatchList = ({ setClickWatch, clickWatch }) => {
     >
       {data.length > 0 ? (
         <>
-          <div className=" grid grid-rows-2 grid-cols-2  gap-[25px]">
+          <div className=" grid grid-rows-2 grid-cols-2 relative  gap-[25px]">
             {data.map((item) => (
               <div
                 key={item.id}
@@ -39,6 +41,11 @@ const WatchList = ({ setClickWatch, clickWatch }) => {
                 </button>
               </div>
             ))}
+            <IconButton sx={{ position: "absolute", top: "-45px",right:'-25px' }} 
+            onClick={() => setClickWatch(false)}
+            >
+              <Close />
+            </IconButton>
           </div>
         </>
       ) : (

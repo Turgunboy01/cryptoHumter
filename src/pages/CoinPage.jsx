@@ -29,8 +29,8 @@ const CoinPage = () => {
   if (!coin) return <LinearProgress style={{ backgroundColor: "87CEEB" }} />;
 
   return (
-    <div className="flex h-[92vh] overflow-hidden bg-[#000] text-[#fff]">
-      <div className="flex-[.3]  h-screen flex-col  flex p-[30px]  ">
+    <div className="flex h-[92.5vh] overflow-hidden bg-[#000] text-[#fff]">
+      <div className="flex-[.3] border-r h-screen flex-col  flex p-[30px]  ">
         <div className="flex flex-col items-center mb-[20px]">
           <img
             src={coin?.image.large}
