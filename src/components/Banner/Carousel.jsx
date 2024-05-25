@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CryptoState } from "../../CryptoContext";
+import { CryptoState } from "../../context/CryptoContext";
 import { TrendingCoins } from "../../config/api";
 import axios from "axios";
 import AliceCarousel from "react-alice-carousel";

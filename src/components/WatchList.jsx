@@ -1,12 +1,13 @@
 import React from "react";
-import useCartStore from "../context/useCardStore";
-import { CryptoState } from "../CryptoContext";
+// import useCartStore from "../context/useCardStore";
+import { useCart } from "../context/useCardStore";
+import { CryptoState } from "../context/CryptoContext";
 import { numberWithCommas } from "./CointsTable";
 import { IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 
 const WatchList = ({ setClickWatch, clickWatch }) => {
-  const { data, removeItem } = useCartStore();
+  const { data, removeItem } = useCart();
   const { symbol } = CryptoState();
   const handleDelate = (id) => {
     removeItem({ id: id });

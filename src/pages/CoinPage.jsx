@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { CryptoState } from "../CryptoContext";
+import { CryptoState } from "../context/CryptoContext";
 import { SingleCoin } from "../config/api";
 import axios from "axios";
 import { LinearProgress, Typography } from "@mui/material";

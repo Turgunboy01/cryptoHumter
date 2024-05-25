@@ -1,7 +1,10 @@
+import React, { createContext, useContext } from "react";
 import create from "zustand";
 
 const useCartStore = create((set) => ({
   data: [],
+  totalItems: 0,
+  totalAmounts: 0,
 
   addToCart: (payload) =>
     set((state) => {
@@ -49,4 +52,13 @@ const useCartStore = create((set) => ({
     }),
 }));
 
-export default useCartStore;
+const CartContext = createContext();
+
+export const CartProvider = ({ children }) => {
+  const store = useCartStore();
+  return <CartContext.Provider value={store}>{children}</CartContext.Provider>;
+};
+
+export const useCart = () => {
+  return useContext(CartContext);
+};

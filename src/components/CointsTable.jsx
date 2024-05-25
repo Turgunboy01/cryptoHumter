@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CryptoState } from "../CryptoContext";
+import { CryptoState } from "../context/CryptoContext";
 // import { unstable_HistoryRouter } from "react-router-dom";
 import { CoinList } from "../config/api";
 import { ThemeProvider } from "@emotion/react";
@@ -23,7 +23,8 @@ import {
 import axios from "axios";
 import { RemoveRedEye } from "@mui/icons-material";
 import { useLocation, useNavigate } from "react-router-dom";
-import useCartStore from "../context/useCardStore";
+// import useCartStore from "../context/useCardStore";
+import { useCart } from "../context/useCardStore";
 
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -37,7 +38,7 @@ export const CointsTable = ({ setClickWatch }) => {
 
   const { currency, symbol } = CryptoState();
   const navigate = useNavigate();
-  const { addToCart, data } = useCartStore();
+  const { addToCart, data } = useCart();
   console.log(data);
   const fetchCoins = async () => {
     setLoading(true);

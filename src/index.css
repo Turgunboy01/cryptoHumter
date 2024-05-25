@@ -28,3 +28,6 @@ body {
 .divScroll::-webkit-scrollbar {
   display: none;
 }
+.apexcharts-tooltip {
+  color: black;
+}

@@ -10,7 +10,7 @@ import {
   makeStyles,
 } from "@mui/material";
 import React from "react";
-import { CryptoState } from "../CryptoContext";
+import { CryptoState } from "../context/CryptoContext";
 
 const darkTheme = createTheme({
   palette: {
